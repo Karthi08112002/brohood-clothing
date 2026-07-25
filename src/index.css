@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-bh-line;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+  }
+  ::selection {
+    background: rgba(184, 147, 90, 0.35);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid #B8935A;
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Eyebrow label — the "tailor's tag" motif used above every section heading */
+  .bh-eyebrow {
+    @apply inline-flex items-center gap-3 text-[11px] tracking-tag uppercase text-bh-gold-bright;
+  }
+  .bh-eyebrow::before {
+    content: '';
+    @apply block w-6 h-px bg-bh-gold;
+  }
+
+  /* Hairline stitched divider — echoes a tailor's seam */
+  .bh-seam {
+    @apply border-t border-dashed border-bh-line;
+  }
+
+  .bh-container {
+    @apply max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12;
+  }
+
+  .bh-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-bh-gold text-bh-black text-[13px] font-semibold tracking-[0.08em] uppercase px-7 py-3.5 transition-colors duration-200 hover:bg-bh-gold-bright;
+  }
+  .bh-btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-bh-white/30 text-bh-white text-[13px] font-semibold tracking-[0.08em] uppercase px-7 py-3.5 transition-colors duration-200 hover:border-bh-gold hover:text-bh-gold-bright;
+  }
+  .bh-btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-bh-black text-bh-white text-[13px] font-semibold tracking-[0.08em] uppercase px-7 py-3.5 transition-colors duration-200 hover:bg-bh-ink;
+  }
+
+  /* Hang-tag price badge, rotated like a garment tag */
+  .bh-tag {
+    @apply absolute top-3 left-3 bg-bh-black/80 backdrop-blur-sm text-bh-gold-bright text-[10px] tracking-tag uppercase px-2.5 py-1 border border-bh-gold/40;
+  }
+
+  .bh-input {
+    @apply w-full bg-transparent border-b border-bh-white/25 text-bh-white placeholder:text-bh-grey px-1 py-2.5 text-sm focus:border-bh-gold outline-none transition-colors;
+  }
+}
