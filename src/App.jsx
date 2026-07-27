@@ -8,6 +8,11 @@ import Categories from './pages/Categories';
 import ProductDetail from './pages/ProductDetail';
 import SearchResults from './pages/SearchResults';
 
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Account from './pages/Account';
+import Admin from './pages/Admin';
+
 function useLocalStorageState(key, initial) {
   const [state, setState] = useState(() => {
     try {
