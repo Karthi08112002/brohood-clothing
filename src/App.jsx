@@ -90,9 +90,21 @@ export default function App() {
               placeholder so nothing in the nav or footer 404s. Replace each with
               the pages listed in the original brief (Cart, Checkout, Auth,
               Dashboard, legal pages, etc.) in the next build pass. */}
-          {['/cart', '/checkout', '/wishlist', '/account', '/login', '/register', '/about', '/contact', '/faq', '/shipping-policy', '/return-policy', '/privacy-policy', '/terms'].map((path) => (
-            <Route key={path} path={path} element={<ComingSoon path={path} />} />
-          ))}
+         <Route path="/login" element={<Login />} />
+<Route path="/register" element={<Register />} />
+<Route path="/account" element={<Account />} />
+<Route path="/admin" element={<Admin />} />
+
+<Route path="/cart" element={<ComingSoon path="/cart" />} />
+<Route path="/checkout" element={<ComingSoon path="/checkout" />} />
+<Route path="/wishlist" element={<ComingSoon path="/wishlist" />} />
+<Route path="/about" element={<ComingSoon path="/about" />} />
+<Route path="/contact" element={<ComingSoon path="/contact" />} />
+<Route path="/faq" element={<ComingSoon path="/faq" />} />
+<Route path="/shipping-policy" element={<ComingSoon path="/shipping-policy" />} />
+<Route path="/return-policy" element={<ComingSoon path="/return-policy" />} />
+<Route path="/privacy-policy" element={<ComingSoon path="/privacy-policy" />} />
+<Route path="/terms" element={<ComingSoon path="/terms" />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
